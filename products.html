@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+</head>
+<body>
+
+<h2 id="product-name"></h2>
+
+<script>
+const products = {
+    "Asus Vivobook 14 OLED": {
+        name: "Asus Vivobook 14 OLED"
+    },
+    "HP Gaming Victus": {
+        name: "HP Gaming Victus"
+    },
+    "Xiaomi 15T Pro": {
+        name: "Xiaomi 15T Pro"
+    },
+    "OPPO A5": {
+        name: "OPPO A5"
+    }
+};
+
+const params = new URLSearchParams(window.location.search);
+const name = params.get("name");
+
+if (products[name]) {
+    document.getElementById("product-name").innerText = products[name].name;
+} else {
+    document.body.innerHTML = "<h2>Không tìm thấy sản phẩm</h2>";
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kết quả tìm kiếm</title>
+</head>
+<body>
+
+<h2>Kết quả tìm kiếm</h2>
+
+<div id="product-list"></div>
+
+<script>
+const products = [
+    {name:"iPhone 16 Pro", price:"29.990.000đ"},
+    {name:"iPhone 15", price:"19.990.000đ"},
+    {name:"Samsung Galaxy S25", price:"22.990.000đ"},
+    {name:"OPPO A5", price:"5.990.000đ"},
+    {name:"Xiaomi 15T Pro", price:"15.490.000đ"}
+];
+
+const keyword = new URLSearchParams(location.search).get("q").toLowerCase();
+
+const result = products.filter(p =>
+    p.name.toLowerCase().includes(keyword)
+);
+
+const list = document.getElementById("product-list");
+
+if(result.length){
+    result.forEach(p=>{
+        list.innerHTML += `
+            <div style="border:1px solid #ccc;padding:10px;margin:10px;">
+                <h3>${p.name}</h3>
+                <p>${p.price}</p>
+            </div>
+        `;
+    });
+}else{
+    list.innerHTML="<h3>Không tìm thấy sản phẩm.</h3>";
+}
+</script>
+
+</body>
+</html>
