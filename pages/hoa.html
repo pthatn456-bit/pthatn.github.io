@@ -1,126 +1,161 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hóa Học</title>
 
-<meta charset="UTF-8">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        body{
+            background:#f5f7fa;
+        }
 
-<title>Chương trình Hóa học</title>
+        header{
+            background:linear-gradient(135deg,#ff9800,#ff5722);
+            color:white;
+            padding:60px 20px;
+            text-align:center;
+        }
 
-<style>
+        header h1{
+            font-size:45px;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
+        header p{
+            margin-top:10px;
+            font-size:20px;
+        }
 
-body{
-background:#fafafa;
-}
+        nav{
+            background:#fff;
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            padding:15px;
+            box-shadow:0 3px 10px rgba(0,0,0,.15);
+            position:sticky;
+            top:0;
+        }
 
-header{
-background:#ff9800;
-color:white;
-text-align:center;
-padding:20px;
-}
+        nav a{
+            text-decoration:none;
+            color:#333;
+            font-weight:bold;
+        }
 
-.container{
+        nav a:hover{
+            color:#ff5722;
+        }
 
-width:90%;
+        .container{
+            width:90%;
+            max-width:1200px;
+            margin:40px auto;
+        }
 
-max-width:1000px;
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:25px;
+        }
 
-margin:30px auto;
+        .card{
+            background:white;
+            border-radius:15px;
+            overflow:hidden;
+            box-shadow:0 5px 20px rgba(0,0,0,.15);
+            transition:.3s;
+        }
 
-}
+        .card:hover{
+            transform:translateY(-8px);
+        }
 
-.grid{
+        .card img{
+            width:100%;
+            height:180px;
+            object-fit:cover;
+        }
 
-display:grid;
+        .card-content{
+            padding:20px;
+        }
 
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        .card h2{
+            color:#ff5722;
+            margin-bottom:15px;
+        }
 
-gap:20px;
+        .card p{
+            color:#555;
+            line-height:1.6;
+        }
 
-}
+        .btn{
+            display:inline-block;
+            margin-top:20px;
+            padding:12px 20px;
+            background:#ff5722;
+            color:white;
+            text-decoration:none;
+            border-radius:8px;
+        }
 
-.card{
+        .btn:hover{
+            background:#e64a19;
+        }
 
-background:white;
+        footer{
+            background:#222;
+            color:white;
+            text-align:center;
+            padding:25px;
+            margin-top:60px;
+        }
 
-padding:20px;
+        @media(max-width:768px){
 
-border-radius:10px;
+            header h1{
+                font-size:35px;
+            }
 
-box-shadow:0 0 10px rgba(0,0,0,.15);
+            nav{
+                flex-wrap:wrap;
+            }
 
-text-align:center;
+        }
 
-}
-
-.card h2{
-
-margin-bottom:15px;
-
-}
-
-.card a{
-
-display:inline-block;
-
-margin-top:15px;
-
-padding:10px 18px;
-
-background:#ff9800;
-
-color:white;
-
-text-decoration:none;
-
-border-radius:8px;
-
-}
-
-.card a:hover{
-
-background:#e68900;
-
-}
-
-.back{
-
-display:inline-block;
-
-margin-top:30px;
-
-text-decoration:none;
-
-background:#2196F3;
-
-color:white;
-
-padding:10px 18px;
-
-border-radius:8px;
-
-}
-
-</style>
+    </style>
 
 </head>
-
 <body>
 
 <header>
 
-<h1>📚 Chương trình Hóa học</h1>
+<h1>🧪 HÓA HỌC</h1>
+
+<p>Kho tài liệu - Bài giảng - Đề thi - Công thức</p>
 
 </header>
+
+<nav>
+
+<a href="../../index.html">🏠 Trang chủ</a>
+
+<a href="lop.html">📚 Chương trình học</a>
+
+<a href="#">📝 Đề thi</a>
+
+<a href="#">📄 Tài liệu</a>
+
+</nav>
 
 <div class="container">
 
@@ -128,53 +163,73 @@ border-radius:8px;
 
 <div class="card">
 
-<h2>Hóa 10</h2>
+<img src="https://picsum.photos/500/300?random=1">
 
-<p>Kiến thức cơ bản lớp 10.</p>
+<div class="card-content">
 
-<a href="#">Xem</a>
+<h2>📘 Hóa 10</h2>
 
-</div>
+<p>
+Học nguyên tử, bảng tuần hoàn, liên kết hóa học...
+</p>
 
-<div class="card">
-
-<h2>Hóa 11</h2>
-
-<p>Kiến thức lớp 11.</p>
-
-<a href="#">Xem</a>
-
-</div>
-
-<div class="card">
-
-<h2>Hóa 12</h2>
-
-<p>Luyện thi THPT.</p>
-
-<a href="#">Xem</a>
-
-</div>
-
-<div class="card">
-
-<h2>Đề thi</h2>
-
-<p>Đề thi và đáp án.</p>
-
-<a href="#">Xem</a>
-
-</div>
-
-</div>
-
-<a href="index.html" class="back">
-
- trang chủ
-
+<a class="btn" href="lop.html">
+Xem ngay
 </a>
 
 </div>
+
+</div>
+
+<div class="card">
+
+<img src="https://picsum.photos/500/300?random=2">
+
+<div class="card-content">
+
+<h2>📗 Hóa 11</h2>
+
+<p>
+Hợp chất vô cơ, axit, bazơ, muối...
+</p>
+
+<a class="btn" href="lop.html">
+Xem ngay
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://picsum.photos/500/300?random=3">
+
+<div class="card-content">
+
+<h2>📕 Hóa 12</h2>
+
+<p>
+Ôn thi THPT, hóa hữu cơ, luyện đề.
+</p>
+
+<a class="btn" href="lop.html">
+Xem ngay
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Website học tập
+
+</footer>
 
 </body>
 </html>
