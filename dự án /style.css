@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f3f3f3;
+}
+
+/* Header */
+
+.top-banner{
+    background:#00b8ff;
+    color:white;
+    text-align:center;
+    padding:12px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.navbar{
+    background:#ffd400;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 40px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.navbar input{
+    width:40%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+.menu-right span{
+    margin-left:20px;
+    cursor:pointer;
+}
+
+.menu{
+    background:#ffc400;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:12px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+/* Banner */
+
+.banner{
+    width:1200px;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:3fr 1fr;
+    gap:15px;
+}
+
+.left-banner img{
+    width:100%;
+    height:100%;
+    border-radius:8px;
+}
+
+.right-banner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.box img{
+    width:100%;
+    border-radius:8px;
+}
+
+.promo{
+    width:1200px;
+    margin:auto;
+    background:#0088ff;
+    color:white;
+    text-align:center;
+    padding:12px;
+    font-size:20px;
+    border-radius:6px;
+}
+
+/* Products */
+
+.products{
+    width:1200px;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:10px;
+    text-align:center;
+    padding:20px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+.card img{
+    width:150px;
+}
+
+.card h3{
+    margin:15px 0;
+}
+
+.card p{
+    color:red;
+    font-weight:bold;
+}
