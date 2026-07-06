@@ -58,3 +58,38 @@ document.getElementById("searchInput")
     }
 
 });
+const pages = {
+    "toan": "pages/toan/index.html",
+    "hoa": "pages/hoa/index.html",
+    "van": "pages/van/index.html",
+    "ly": "pages/ly/index.html",
+    "anh": "pages/anh/index.html"
+};
+
+function normalize(str) {
+    return str
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, " ")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+}
+
+function searchPage() {
+    const keyword = normalize(document.getElementById("searchInput").value);
+
+    for (const key in pages) {
+        if (keyword.includes(key)) {
+            window.location.href = pages[key];
+            return;
+        }
+    }
+
+    alert("Không tìm thấy môn học!");
+}
+
+document.getElementById("searchInput").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        searchPage();
+    }
+});
