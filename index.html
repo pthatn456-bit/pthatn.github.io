@@ -90,3 +90,191 @@ function timKiem(){
 
 </body>
 </html>
+
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Học Tập</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#74ebd5,#9face6);
+}
+
+.container{
+    background:white;
+    width:450px;
+    max-width:90%;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+    text-align:center;
+}
+
+h1{
+    color:#2c3e50;
+    margin-bottom:15px;
+    font-size:34px;
+}
+
+p{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.search-box{
+    display:flex;
+    gap:10px;
+}
+
+input{
+    flex:1;
+    padding:15px;
+    border:2px solid #ddd;
+    border-radius:12px;
+    font-size:18px;
+    outline:none;
+    transition:.3s;
+}
+
+input:focus{
+    border-color:#4CAF50;
+    box-shadow:0 0 10px rgba(76,175,80,.3);
+}
+
+button{
+    background:#4CAF50;
+    color:white;
+    border:none;
+    padding:15px 22px;
+    border-radius:12px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#45a049;
+    transform:translateY(-2px);
+}
+
+.subjects{
+    margin-top:25px;
+}
+
+.subjects span{
+    display:inline-block;
+    margin:5px;
+    background:#eef5ff;
+    color:#0077ff;
+    padding:8px 14px;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.subjects span:hover{
+    background:#0077ff;
+    color:white;
+}
+
+#msg{
+    color:red;
+    margin-top:18px;
+    font-weight:bold;
+}
+
+.footer{
+    margin-top:30px;
+    color:#888;
+    font-size:14px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>📚 Website Học Tập</h1>
+
+<p>Tìm nhanh môn học bạn muốn học</p>
+
+<div class="search-box">
+<input
+type="text"
+id="search"
+placeholder="Nhập Toán, Văn hoặc Hóa"
+onkeypress="if(event.key==='Enter') timKiem()">
+
+<button onclick="timKiem()">🔍</button>
+</div>
+
+<div class="subjects">
+<p><b>Gợi ý:</b></p>
+
+<span onclick="chonMon('toán')">📐 Toán</span>
+<span onclick="chonMon('văn')">📖 Văn</span>
+<span onclick="chonMon('hóa')">🧪 Hóa</span>
+
+</div>
+
+<p id="msg"></p>
+
+<div class="footer">
+© 2026 Website Học Tập
+</div>
+
+</div>
+
+<script>
+
+const monHoc = {
+    "toán":"page/toan.html",
+    "toan":"page/toan.html",
+    "văn":"page/van.html",
+    "van":"page/van.html",
+    "hóa":"page/hoa.html",
+    "hoa":"page/hoa.html"
+};
+
+function timKiem(){
+
+    let key=document.getElementById("search")
+    .value
+    .trim()
+    .toLowerCase();
+
+    if(monHoc[key]){
+        location.href=monHoc[key];
+    }else{
+        document.getElementById("msg").innerHTML=
+        "❌ Không tìm thấy môn học!";
+    }
+
+}
+
+function chonMon(mon){
+    document.getElementById("search").value=mon;
+    timKiem();
+}
+
+</script>
+
+</body>
+</html>
