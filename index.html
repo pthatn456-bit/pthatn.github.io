@@ -1,322 +1,69 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thế Giới Di Động Clone</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<meta charset="UTF-8">
+<title>Website Học Tập</title>
+<style>
+body{
+    font-family:Arial;
+    background:#eef5ff;
+    text-align:center;
+    margin-top:100px;
+}
+input{
+    width:300px;
+    padding:10px;
+    font-size:18px;
+}
+button{
+    padding:10px 20px;
+    font-size:18px;
+    cursor:pointer;
+}
+#msg{
+    color:red;
+    margin-top:15px;
+}
+</style>
 </head>
-
 <body>
 
-<header class="top-header">
+<h1>📚 Website Học Tập</h1>
 
-    <div class="top-sale">
-        <img src="images/top-banner.jpg" alt="Top Banner">
-    </div>
+<input type="text" id="search" placeholder="Nhập Toán, Văn hoặc Hóa">
 
-    <div class="container">
+<button onclick="timKiem()">Tìm kiếm</button>
 
-        <div class="header">
+<p id="msg"></p>
 
-            <div class="logo">
-                <img src="images/logo.png" alt="Logo">
-            </div>
+<script>
 
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" placeholder="Bạn tìm gì...">
-            </div>
+const monHoc = {
+    "toán":"toan.html",
+    "toan":"toan.html",
+    "văn":"van.html",
+    "van":"van.html",
+    "hóa":"hoa.html",
+    "hoa":"hoa.html"
+};
 
-            <div class="header-btn">
-                <i class="fa-solid fa-user"></i>
-                <span>Đăng nhập</span>
-            </div>
+function timKiem(){
 
-            <div class="header-btn">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span>Giỏ hàng</span>
-            </div>
+    let key=document.getElementById("search")
+            .value
+            .trim()
+            .toLowerCase();
 
-            <div class="header-btn">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>Hồ Chí Minh</span>
-            </div>
+    if(monHoc[key]){
+        location.href=monHoc[key];
+    }else{
+        document.getElementById("msg").innerHTML=
+        "❌ Không tìm thấy môn học.";
+    }
 
-        </div>
+}
 
-        <nav class="menu">
-            <a href="#"><i class="fa-solid fa-mobile-screen"></i>Điện thoại</a>
-            <a href="#"><i class="fa-solid fa-laptop"></i>Laptop</a>
-            <a href="#"><i class="fa-solid fa-tablet-screen-button"></i>Tablet</a>
-            <a href="#"><i class="fa-solid fa-headphones"></i>Phụ kiện</a>
-            <a href="#"><i class="fa-solid fa-clock"></i>Smartwatch</a>
-            <a href="#"><i class="fa-solid fa-desktop"></i>PC</a>
-            <a href="#"><i class="fa-solid fa-tv"></i>Tivi</a>
-            <a href="#"><i class="fa-solid fa-blender"></i>Gia dụng</a>
-            <a href="#"><i class="fa-solid fa-tag"></i>Khuyến mãi</a>
-        </nav>
-
-    </div>
-
-</header>
-
-<section class="hero">
-    <div class="container">
-        <div class="slider">
-            <img src="images/banner1.jpg" alt="Banner Slider">
-        </div>
-    </div>
-</section>
-
-<section class="flash-sale">
-
-    <div class="container">
-
-        <div class="flash-title">
-            <span>FLASH SALE</span>
-            <div class="countdown">
-                <div>01</div>
-                <div>11</div>
-                <div>45</div>
-            </div>
-        </div>
-
-        <div class="product-grid">
-
-            <div class="product-card">
-                <div class="discount">-18%</div>
-                <img src="images/p1.jpg" alt="Asus Vivobook">
-                <h3>Asus Vivobook 14 OLED</h3>
-                <div class="price">
-                    <span class="new-price">22.770.000₫</span>
-                    <span class="old-price">27.700.000₫</span>
-                </div>
-                <div class="gift">Quà 500.000₫</div>
-                <button>Mua ngay</button>
-            </div>
-
-            <div class="product-card">
-                <div class="discount">-24%</div>
-                <img src="images/p2.jpg" alt="HP Gaming">
-                <h3>HP Gaming Victus</h3>
-                <div class="price">
-                    <span class="new-price">14.190.000₫</span>
-                    <span class="old-price">18.990.000₫</span>
-                </div>
-                <div class="gift">Quà 300.000₫</div>
-                <button>Mua ngay</button>
-            </div>
-
-            <div class="product-card">
-                <div class="discount">-10%</div>
-                <img src="images/p3.jpg" alt="Xiaomi 15T">
-                <h3>Xiaomi 15T Pro</h3>
-                <div class="price">
-                    <span class="new-price">15.490.000₫</span>
-                    <span class="old-price">17.190.000₫</span>
-                </div>
-                <div class="gift">Tặng Voucher</div>
-                <button>Mua ngay</button>
-            </div>
-
-            <div class="product-card">
-                <div class="discount">-12%</div>
-                <img src="images/p4.jpg" alt="OPPO A5">
-                <h3>OPPO A5</h3>
-                <div class="price">
-                    <span class="new-price">5.970.000₫</span>
-                    <span class="old-price">6.590.000₫</span>
-                </div>
-                <div class="gift">Trả góp 0%</div>
-                <button>Mua ngay</button>
-            </div>
-
-            <div class="product-card">
-                <div class="discount">-32%</div>
-                <img src="images/p5.jpg" alt="Casio Timeless">
-                <h3>Casio Timeless</h3>
-                <div class="price">
-                    <span class="new-price">2.107.000₫</span>
-                    <span class="old-price">3.099.000₫</span>
-                </div>
-                <div class="gift">Giảm thêm 5%</div>
-                <button>Mua ngay</button>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="category">
-
-    <div class="container">
-
-        <div class="section-title">Mua Online - Hàng chuẩn, giá mê</div>
-
-        <div class="category-list">
-            <div class="category-item"><img src="images/c1.png" alt="Máy lạnh"><p>Máy lạnh</p></div>
-            <div class="category-item"><img src="images/c2.png" alt="Nồi cơm"><p>Nồi cơm</p></div>
-            <div class="category-item"><img src="images/c3.png" alt="Máy hút bụi"><p>Máy hút bụi</p></div>
-            <div class="category-item"><img src="images/c4.png" alt="Loa"><p>Loa</p></div>
-            <div class="category-item"><img src="images/c5.png" alt="Tai nghe"><p>Tai nghe</p></div>
-            <div class="category-item"><img src="images/c6.png" alt="Camera"><p>Camera</p></div>
-            <div class="category-item"><img src="images/c7.png" alt="Pin dự phòng"><p>Pin dự phòng</p></div>
-            <div class="category-item"><img src="images/c8.png" alt="Router Wifi"><p>Router Wifi</p></div>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="recommend">
-
-    <div class="container">
-
-        <div class="section-title">Gợi ý cho bạn</div>
-
-        <div class="product-grid">
-
-            <div class="product-card">
-                <div class="discount">-25%</div>
-                <img src="images/p6.jpg" alt="Huawei Watch">
-                <h3>Huawei Watch GT 5</h3>
-                <div class="price">
-                    <span class="new-price">5.390.000₫</span>
-                    <span class="old-price">6.590.000₫</span>
-                </div>
-                <div class="gift">Tặng dây đeo</div>
-                <button>Mua ngay</button>
-            </div>
-
-            <div class="product-card">
-                <div class="discount">-25%</div>
-                <img src="images/p7.jpg" alt="iPhone 16">
-                <h3>iPhone 16</h3>
-                <div class="price">
-                    <span class="new-price">21.990.000₫</span>
-                    <span class="old-price">25.990.000₫</span>
-                </div>
-                <div class="gift">Trả góp 0%</div>
-                <button>Mua ngay</button>
-            </div>
-
-            <div class="product-card">
-                <div class="discount">-30%</div>
-                <img src="images/p8.jpg" alt="Samsung Galaxy">
-                <h3>Samsung Galaxy A56</h3>
-                <div class="price">
-                    <span class="new-price">8.490.000₫</span>
-                    <span class="old-price">11.990.000₫</span>
-                </div>
-                <div class="gift">Tặng củ sạc</div>
-                <button>Mua ngay</button>
-            </div>
-
-            <div class="product-card">
-                <div class="discount">-20%</div>
-                <img src="images/p9.jpg" alt="Lenovo IdeaPad">
-                <h3>Lenovo IdeaPad Slim 3</h3>
-                <div class="price">
-                    <span class="new-price">17.990.000₫</span>
-                    <span class="old-price">20.990.000₫</span>
-                </div>
-                <div class="gift">Office bản quyền</div>
-                <button>Mua ngay</button>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="big-banner">
-    <div class="container">
-        <img src="images/banner2.jpg" alt="Big Banner">
-    </div>
-</section>
-
-<section class="brands">
-    <div class="container">
-        <div class="section-title">Thương hiệu nổi bật</div>
-        <div class="brand-grid">
-            <img src="images/brand1.jpg" alt="Brand 1">
-            <img src="images/brand2.jpg" alt="Brand 2">
-            <img src="images/brand3.jpg" alt="Brand 3">
-            <img src="images/brand4.jpg" alt="Brand 4">
-        </div>
-    </div>
-</section>
-
-<section class="keyword">
-    <div class="container">
-        <div class="section-title">Mọi người cũng tìm kiếm</div>
-        <div class="tags">
-            <a href="#">iphone 16</a>
-            <a href="#">iphone 15</a>
-            <a href="#">macbook</a>
-            <a href="#">samsung</a>
-            <a href="#">xiaomi</a>
-            <a href="#">oppo</a>
-            <a href="#">tivi</a>
-            <a href="#">máy lạnh</a>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-
-    <div class="container footer-grid">
-
-        <div class="footer-col">
-            <h4>Tổng đài hỗ trợ</h4>
-            <p>Gọi mua: 1900 123 456</p>
-            <p>Khiếu nại: 1900 654 321</p>
-            <p>Bảo hành: 1800 111 222</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Về chúng tôi</h4>
-            <p>Giới thiệu</p>
-            <p>Tuyển dụng</p>
-            <p>Chính sách</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Hỗ trợ</h4>
-            <p>Hướng dẫn mua hàng</p>
-            <p>Thanh toán</p>
-            <p>Giao hàng</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Kết nối</h4>
-            <div class="social">
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-tiktok"></i>
-                <i class="fab fa-instagram"></i>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="copyright">
-        © 2025 Clone Website
-    </div>
-
-</footer>
-
-<script src="script.js"></script>
+</script>
 
 </body>
 </html>
