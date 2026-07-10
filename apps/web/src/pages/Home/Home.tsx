@@ -14,16 +14,15 @@ from "../../components/AudioResult/AudioResult";
 
 
 
-export default function Home(){
-
-const [downloadUrl, setDownloadUrl] = useState("");
-
-async function handleUpload(file: File) {
-    const upload = await uploadMp3(file);
-    const result = await translate(upload.job_id);
-    setDownloadUrl(result.download_url);
-}    
-
+export default function Home() {
+  return (
+    <div style={{ padding: 40 }}>
+      <h1 style={{ color: "red" }}>
+        HOME ĐANG CHẠY
+      </h1>
+    </div>
+  );
+}
 
 return (
 
