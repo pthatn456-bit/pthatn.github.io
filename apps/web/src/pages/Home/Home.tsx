@@ -4,8 +4,18 @@ import AudioResult from "../../components/AudioResult/AudioResult";
 
 export default function Home() {
   return (
-    <div style={{ background: "yellow", padding: 50 }}>
-      <h1>HOME VERSION 999</h1>
+    <div className="container">
+      <h1>YouTube Voice Translator</h1>
+
+      <AudioUpload />
+
+      <br />
+
+      <TranslateProgress />
+
+      <br />
+
+      <AudioResult />
     </div>
   );
 }
