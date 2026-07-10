@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+
+input{
+
+    outline:none;
+
+}
+
+
+.container{
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    padding:40px;
+
+}
