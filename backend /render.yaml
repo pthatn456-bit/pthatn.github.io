@@ -1,6 +1,7 @@
 services:
   - type: web
-    name: youtube-voice-translator-api
-    runtime: python
+    name: youtube-translator-api
+    env: python
+    rootDir: backend
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
