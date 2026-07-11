@@ -28,7 +28,7 @@ return null;
 
 return(
 
-<div>
+<div className="card">
 
 
 <h2>

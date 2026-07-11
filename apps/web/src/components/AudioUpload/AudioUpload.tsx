@@ -90,7 +90,7 @@ setProgress(
 
 return (
 
-<div>
+<div className="card">
 
 
 <h2>

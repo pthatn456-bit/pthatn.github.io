@@ -16,7 +16,7 @@ state=>state.progress
 
 return(
 
-<div>
+<div className="card">
 
 
 <h2>

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import {
-    BrowserRouter
+    HashRouter
 } from "react-router-dom";
 
 import App from "./routes/App";
@@ -18,11 +18,11 @@ ReactDOM
 
     <React.StrictMode>
 
-        <BrowserRouter>
+        <HashRouter>
 
             <App/>
 
-        </BrowserRouter>
+        </HashRouter>
 
     </React.StrictMode>
 
