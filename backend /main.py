@@ -23,6 +23,13 @@ os.makedirs(
 )
 
 
+@app.get("/")
+def home():
+    return {
+        "message": "YouTube Voice Translator API running"
+    }
+
+
 @app.post("/api/audio/upload")
 async def upload_audio(
     file: UploadFile = File(...)
@@ -30,7 +37,11 @@ async def upload_audio(
 
     job_id = str(uuid.uuid4())
 
-    filename = f"{job_id}_{file.filename}"
+    filename = (
+        job_id +
+        "_" +
+        file.filename
+    )
 
     path = os.path.join(
         UPLOAD_DIR,
@@ -38,14 +49,13 @@ async def upload_audio(
     )
 
 
-    with open(path, "wb") as buffer:
-        buffer.write(
+    with open(path, "wb") as f:
+        f.write(
             await file.read()
         )
 
 
     return {
         "job_id": job_id,
-        "filename": filename,
-        "message": "upload success"
+        "filename": filename
     }
