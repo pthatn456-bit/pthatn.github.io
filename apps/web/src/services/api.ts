@@ -4,7 +4,7 @@ import axios from "axios";
 const api = axios.create({
 
 baseURL:
-"https://your-api-server.com/api"
+"https://youtube-voice-translator-api.onrender.com"
 
 });
 
