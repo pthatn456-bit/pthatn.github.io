@@ -61,7 +61,9 @@ async function submit(){
             10
         );
 
-    } catch(error){
+    
+    
+        } catch(error){
 
         console.error(
             "Upload failed:",
@@ -75,7 +77,6 @@ async function submit(){
     }
 
 }
-}
 
 
 return (
@@ -86,35 +87,27 @@ return (
     Chọn MP3 tiếng Anh
 </h2>
 
-
 <input
-
-type="file"
-
-accept=".mp3"
-
-onChange={(e)=>
-    setFile(
-        e.target.files?.[0] || null
-    )
-}
-
+    type="file"
+    accept=".mp3"
+    onChange={(e)=>
+        setFile(
+            e.target.files?.[0] || null
+        )
+    }
 />
-
 
 <br/><br/>
 
-
 <button
-onClick={submit}
+    onClick={submit}
 >
     Dịch sang MP3 tiếng Việt
 </button>
-
 
 </div>
 
 );
 
 
-}
+}    
