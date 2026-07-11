@@ -2,46 +2,37 @@ import {
     useState
 } from "react";
 
-
 import {
     uploadAudio
 } from "../../services/upload.service";
-
 
 import {
     useTranslateStore
 } from "../../stores/translate.store";
 
-
 import useTranslate
 from "../../hooks/useTranslate";
-
 
 
 export default function AudioUpload(){
 
 
 const [
-file,
-setFile
+    file,
+    setFile
 ]=useState<File|null>(null);
 
 
-
 const [
-jobId,
-setJobId
+    jobId,
+    setJobId
 ]=useState<string|null>(null);
-
 
 
 const setProgress =
 useTranslateStore(
-
-state=>state.setProgress
-
+    state=>state.setProgress
 );
-
 
 
 useTranslate(jobId);
@@ -50,33 +41,76 @@ useTranslate(jobId);
 
 async function submit(){
 
+    if(!file){
+        return;
+    }
 
-if(!file){
 
-return;
+    const result =
+    await uploadAudio(
+        file
+    );
+
+
+    setJobId(
+        result.job_id
+    );
+
+
+    setProgress(
+        10
+    );
 
 }
 
 
 
-const result =
-await uploadAudio(
+return (
 
-file
-
-);
+<div className="card">
 
 
-setJobId(
-
-result.job_id
-
-);
+<h2>
+    Chọn MP3 tiếng Anh
+</h2>
 
 
-setProgress(
+<input
 
-10
+type="file"
+
+accept=".mp3"
+
+onChange={
+
+(e)=>
+
+setFile(
+
+e.target.files?.[0] || null
+
+)
+
+}
+
+/>
+
+
+<br/><br/>
+
+
+<button
+
+onClick={submit}
+
+>
+
+Dịch sang MP3 tiếng Việt
+
+</button>
+
+
+</div>
 
 );
 
