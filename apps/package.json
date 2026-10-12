@@ -1,7 +1,0 @@
-{
-  "name": "youtube-voice-translator",
-  "private": true,
-  "workspaces": [
-    "web"
-  ]
-}
